@@ -16,10 +16,10 @@ function Colours() {
 
   const getCharactersForColor = (color) => {
     let charactersForColor = [];
+    let totalAmountOfJars = 0;
     for(let i=0; i<characters.length; i++){
       const pal = PalletesChar[characters[i]];
       const palS = PalletesWithSquare[characters[i]];
-      console.log(palS);
       if(pal.indexOf(color)>=0) {
         let start =0;
         let numbers = [];
@@ -36,11 +36,16 @@ function Colours() {
         }
 
         charactersForColor.push({[characters[i]]: `№${pal.indexOf(color) + 1} (${palS[pal.indexOf(color)]} jar(s) : ${numbers})`})
+        totalAmountOfJars += palS[pal.indexOf(color)];
       }
     }
-    return charactersForColor.map((ch) => {
+    const list = charactersForColor.map((ch) => {
       return <div>{Object.keys(ch)} {Object.values(ch)}</div>
     })
+    return <div>
+        <div className='total-amount'>{totalAmountOfJars} jar(s) for all characters</div>
+        {list}
+    </div>
   }
 
 

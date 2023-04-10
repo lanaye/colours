@@ -117,7 +117,9 @@ export const ColourDecription = {
     '286078': '4blue:1.2white:0.5biryza:0.3black only ROSA',
     '54A1BD': '3blue:3white:0.5biryza:0.1black only ROSA',
     '92B8C5': '3blue:4white:0.1biryza:0.5black only ROSA',
-    'E7D4C7': '2telesnogo:1yellow:1red:3white only ROSA'
+    'E7D4C7': '2telesnogo:1yellow:1red:3white only ROSA',
+    '161616': '4black:1white',
+    'FCFBF9': '4white:1black'
 }
 
 export default {
