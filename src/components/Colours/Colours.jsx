@@ -52,8 +52,10 @@ function Colours() {
   const listColors = Array.from(uniqueColors).sort().map((color) => {
     const charactersForColor = getCharactersForColor(color)
     const decription = ColourDecription[color];
+    const reg = new RegExp('^[0-4]')
+    let textColor = reg.test(color) ? 'white' : 'black';
     return <div className='color'>
-          <div className='block' key={color} style={{backgroundColor: `#${color}`}}>#{color}</div>
+          <div className='block' key={color} style={{color: textColor, backgroundColor: `#${color}`}}>#{color}</div>
           <div className='description'>{decription}</div>
           <div>{charactersForColor}</div>
       </div>
