@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Colours from './components/Colours/Colours';
+import Palletes from './components/Palletes/Palletes';
+
 
 function App() {
+
+  const [theme, setTheme] = useState('colours')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={() => setTheme(theme === 'colours' ? 'palletes' : 'colours')}>Change to {theme === 'colours' ? 'palletes' : 'colours'}</button>
+      {theme === 'colours' ? <Colours /> : <Palletes />}
     </div>
-  );
+    );
 }
 
 export default App;
