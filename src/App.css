@@ -39,6 +39,7 @@
   margin-right: 10px;
   margin-bottom: 5px;
   margin-top: 5px;
+  border: 1px solid black;
 }
 
 .palletes {
@@ -63,4 +64,20 @@
   justify-content: space-between;
   margin: 15px;
   white-space: pre-wrap;
+}
+
+.all-jars {
+  display: inline-grid;
+  text-align: center;
+  margin: 15px;
+}
+
+.jars {
+  display: flex;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 20px;
+  margin: 5px;
 }
