@@ -57,3 +57,10 @@
   font-size: small;
   margin: 5px 0;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+  white-space: pre-wrap;
+}
