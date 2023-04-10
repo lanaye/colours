@@ -33,7 +33,7 @@ function Palletes({filter}) {
       })
     );
   }
-  const listCharacters = Object.keys(PalletesChar).filter((char) => char.includes(filter)).map((char) => {
+  const listCharacters = Object.keys(PalletesChar).filter((char) => char.toLowerCase().includes(filter.toLowerCase())).map((char) => {
     const colours = getColorForCharacters(PalletesChar[char], PalletesWithSquare[char])
     const jars = getJars(PalletesChar[char], PalletesWithSquare[char]).map((ar) => {
       return <div className='jars'>{ar}</div>
