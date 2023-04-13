@@ -1,7 +1,7 @@
 import { PalletesChar, PalletesWithSquare, Char, ColourDecription } from '../../palletes';
 
 
-function Colours() {
+function Colours({filter}) {
   
   let uniqueColors = new Set()
   let notUniqueColors = []
@@ -39,6 +39,7 @@ function Colours() {
         totalAmountOfJars += palS[pal.indexOf(color)];
       }
     }
+    if (!charactersForColor.filter((char) => Object.keys(char)[0].toLowerCase().includes(filter.toLowerCase())).length) {return}
     const list = charactersForColor.map((ch) => {
       return <div>{Object.keys(ch)} {Object.values(ch)}</div>
     })
@@ -51,6 +52,9 @@ function Colours() {
 
   const listColors = Array.from(uniqueColors).sort().map((color) => {
     const charactersForColor = getCharactersForColor(color)
+    if(!charactersForColor) {
+      return <></>
+    }
     const decription = ColourDecription[color];
     const reg = new RegExp('^[0-4]')
     let textColor = reg.test(color) ? 'white' : 'black';

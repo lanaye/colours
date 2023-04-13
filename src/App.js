@@ -19,13 +19,13 @@ function App() {
     <div>
       <div className='header'>
         <button onClick={changeTheme}>Change to {theme === 'colours' ? 'palletes' : 'colours'}</button>
-        {theme !== 'colours' && <input value={filter} onChange={(e) => setFilter(e.target.value)}/>}
+        <input value={filter} onChange={(e) => setFilter(e.target.value)}/>
         <div>
           <div>100ml = 190g ~ 50*3.6g</div>
           <div>  50ml =  95g ~ 25*3.6g</div>
         </div>
       </div>
-      {theme === 'colours' ? <Colours /> : <Palletes filter={filter}/>}
+      {theme === 'colours' ? <Colours filter={filter}/> : <Palletes filter={filter}/>}
     </div>
     );
 }
